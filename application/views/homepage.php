@@ -8,14 +8,31 @@
             <li class="nav-item active">
                 <a class="nav-link btn btn-danger" href="/Task/create">Создать задачу </a>
             </li>
+            <?if(!isset($data['user'])):?>
+            <li class="nav-item active">
+                <a class="nav-link btn btn-info" href="/User">Регистрация</a>
+            </li>
 
             <li class="nav-item active">
-                <a class="nav-link btn btn-info" href="/Admin">Войти</a>
+                <a class="nav-link btn btn-info" href="/User/enter">Войти</a>
             </li>
+                <?else:?>
+                <li class="nav-item active">
+                    <p>Welcome, <?=$data['user']['user_login'];?></p>
+                </li>
+
+                <?endif;?>
+
         </ul>
     </div>
 </nav>
+<br>
+<br>
+<br>
+<br>
 <h1>Tasks</h1>
+
+
 
 
     <table class="table">

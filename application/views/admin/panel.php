@@ -1,3 +1,4 @@
+<h1>Welcome to admin panel!</h1>
 <table class="table">
     <thead>
     <tr>

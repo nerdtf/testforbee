@@ -12,6 +12,13 @@ try{
 	)DEFAULT CHARACTER SET utf8 ENGINE=InnoDB';
 	$pdo->exec($sql);
 
+    $sql = 'CREATE TABLE users (
+     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     user_login VARCHAR(30) NOT NULL,
+     user_password VARCHAR(32) NOT NULL
+    )DEFAULT CHARACTER SET utf8 ENGINE=InnoDB ';
+    $pdo->exec($sql);
+
 }catch(Exception $e){
 	echo "Не удалось создать таблицу" . $e->getMessage();
 }
