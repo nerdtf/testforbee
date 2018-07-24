@@ -17,9 +17,11 @@
                 <a class="nav-link btn btn-info" href="/User/enter">Войти</a>
             </li>
                 <?else:?>
+
                 <li class="nav-item active">
-                    <p>Welcome, <?=$data['user']['user_login'];?></p>
+                    <p class="text-success"><strong>Welcome, <?=$data['user']['user_login'];?> </strong></p>
                 </li>
+
 
                 <?endif;?>
 
@@ -31,10 +33,6 @@
 <br>
 <br>
 <h1>Tasks</h1>
-
-
-
-
     <table class="table">
         <thead>
         <tr>

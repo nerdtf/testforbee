@@ -1,4 +1,19 @@
+<script type="text/javascript">
+    window.onload = function(){
+        v = document.getElementById("preview");
+        if( v && document.getElementById('view')) {
+            v.onclick = function(){
+                var str = '<h1>' + document.forms[0].user_name.value+ '</h1>';
+                str += '<h3>' + document.forms[0].email.value + '</h3>';
+                str += '<p>' + document.forms[0].task_text.value + '</p>';
+
+                document.getElementById('view').innerHTML = str;
+            }
+        }
+    }
+</script>
 <h1 >Create Task:</h1>
+<div id="view"></div>
 <form action="/Task/store" enctype="multipart/form-data" method="POST">
 
     <div class="form-group">
@@ -22,6 +37,9 @@
     </div>
 
     <div class="form-group">
-        <button class="btn btn-warning" type="submit">Create</button>
+        <button class="btn btn-warning" type="submit" id="submit">Create</button>
     </div>
+
+    <p><input type='button' id='preview' value='Предв.просмотр'></p>
+
 </form>

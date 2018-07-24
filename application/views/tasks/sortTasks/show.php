@@ -1,4 +1,4 @@
-
+<?$counter = 0;?>
     <table class="table">
         <thead>
         <tr>
@@ -24,8 +24,20 @@
         <?endforeach;?>
     </table>
 
+<?
 
-<p><a href="/SortTasks/show/<?=$data['sortTasks'][0]['id'] - 3;?>" role="button" class="btn btn-success">Предыдущая страница</a></p>
-    <p><a href="/SortTasks/show/<?=$data['sortTasks'][0]['id'] +  3;?>" role="button" class="btn btn-info">Следующая страница</a></p>
+
+for ($j = 0; $j<count($data['sortTasks']);$j++){
+    for($i = 0; $i<count($data['tasks']); $i++){
+        if($data['sortTasks'][$j]['user_name'] == $data['tasks'][$i]['user_name']){
+            $counter = $i;
+        }
+    }
+}
+
+
+?>
+<p><a href="/SortTasks/show/<?=$counter-3?>" role="button" class="btn btn-success">Предыдущая страница</a></p>
+    <p><a href="/SortTasks/show/<?=$counter +1;?>" role="button" class="btn btn-info">Следующая страница</a></p>
     <p><a href="/SortTasks/show/1" role="button" class="btn btn-dark">Начало</a></p>
 

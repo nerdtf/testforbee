@@ -40,7 +40,7 @@ class Controller_Task extends Controller
         $this->model->store($_POST['user_name'], $_POST['email'], $_POST['task_text'], $image);
         $data = [];
         $data['tasks'] = $this->model->all();
-        $this->view->generate('tasks/index.php', 'main_template.php', $data);
+        $this->view->generate('homepage.php', 'main_template.php', $data);
     }
 
 

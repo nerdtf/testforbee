@@ -12,14 +12,17 @@ class Controller_SortTasks extends Controller
     {
         $data = [];
         $data['tasks'] = $this->model->all();
-        $data['tasks'] = $this->model->sort('user_name');
-        $data['sortTasks'] = array_values($data['tasks']);
+        $data['tasks'] = array_values($this->model->sort('user_name'));
+
         $this->view->generate('tasks/sortTasks/index.php', 'main_template.php', $data);
     }
 
     public function action_show($start){
-
-        $data['sortTasks'] = $this->model->get3Tasks($start, "user_name");
+        
+        $data['tasks'] = array_values($this->model->sort('user_name'));
+        for ($i = $start; $i<=$start+2; $i++){
+            $data['sortTasks'][] = $data['tasks'][$i];
+        }
         $this->view->generate('tasks/sortTasks/show.php', 'main_template.php', $data);
     }
 
